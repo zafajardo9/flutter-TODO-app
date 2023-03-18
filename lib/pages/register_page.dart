@@ -4,6 +4,8 @@ import 'package:flutter_todo/components/my_textfield.dart';
 import 'package:flutter_todo/components/squred_tiles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../services/auth_service.dart';
+
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
 
@@ -159,14 +161,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SquaredTiles(
+                      onTap: () => AuthService().signInWithGoogle(),
                       imageLocation: 'images/google.png',
                     ),
                     SizedBox(width: 20),
                     SquaredTiles(
+                      onTap: () {},
                       imageLocation: 'images/apple.png',
                     ),
                     SizedBox(width: 20),
                     SquaredTiles(
+                      onTap: () {},
                       imageLocation: 'images/github.png',
                     ),
                   ],
